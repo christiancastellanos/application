@@ -1,0 +1,27 @@
+<h3 class="title">
+  Usuario: {{usuario.id}}
+  <div class="actions" *ngIf="editable">
+    <button [routerLink]="'/editarUsuario/'+usuario.id">editar</button>
+    <button (click)="eliminarUsuario()">borrar</button>
+  </div>
+</h3>
+<div class="content">
+  <p (click)="avisocapturadatospasaapadre($event)">
+    SSOID: {{usuario.ssoId}}
+  </p>
+  <p>
+    PASSWORD: {{usuario.password}}
+  </p>
+  <p>
+    FIRSTNAME: {{usuario.firstname}}
+  </p>
+  <p>
+    LASTNAME: {{usuario.lastname}}
+  </p>
+  <p>
+    EMAIL: {{usuario.email}}
+  </p>
+
+
+
+</div>

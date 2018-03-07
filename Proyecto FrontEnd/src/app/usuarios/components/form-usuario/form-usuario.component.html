@@ -1,0 +1,33 @@
+<h3 *ngIf="!usuario?.id">Nuevo usuario</h3>
+<h3 *ngIf="usuario?.id">Usuario {{usuario.id}}</h3>
+
+<form (submit)="enviarUsuario(usuario)">
+
+  <p>
+    <label>SsoId</label>
+    <input type="text" [ngModel]="usuario?.ssoId" (ngModelChange)="usuario.ssoId = $event" name="ssoId"/>
+  </p>
+  <p>
+    <label>Password</label>
+    <input type="text" [ngModel]="usuario?.password" (ngModelChange)="usuario.password = $event" name="password"/>
+  </p>
+  <p>
+    <label>Firstname</label>
+    <input type="texte" [ngModel]="usuario?.firstname" (ngModelChange)="usuario.firstname = $event" name="firstname"/>
+  </p>
+
+  <p>
+    <label>Lastname</label>
+    <input type="text" [ngModel]="usuario?.lastname" (ngModelChange)="usuario.lastname = $event" name="lastname"/>
+  </p>
+  <p>
+    <label>Email</label>
+    <input type="text" [ngModel]="usuario?.email" (ngModelChange)="usuario.email = $event" name="email"/>
+  </p>
+
+  
+
+  <button type="submit">Enviar</button>
+  <button type="button" (click)="cancelar()">Cancelar</button>
+
+</form>

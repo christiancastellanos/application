@@ -1,0 +1,15 @@
+<h2 class="title">
+  Usuarios
+  <div class="actions" *ngIf="editable">
+    <button [routerLink]="'/nuevoUsuario'">agregar</button>
+  </div>
+</h2>
+<div class="content">
+  <app-list-item-usuario *ngFor="let usuario of usuarios"
+                          [usuario]="usuario"
+                          [editable]="editable"
+                          (eliminado)="actualiarUsuarios()"
+                          (aviso)="mostraraviso($event)">
+  </app-list-item-usuario>
+  <div>ddddd</div>
+</div>
